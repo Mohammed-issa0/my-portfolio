@@ -28,6 +28,11 @@ Portfolio starts at 721 and end at 848
     }
 }
 
+body{
+    background-image: url(images/stars1.webp);
+    background-repeat: repeat;
+    object-fit: cover;
+}
 ::-webkit-scrollbar{
     height: 0;
     width: .5rem;
@@ -94,6 +99,16 @@ Portfolio starts at 721 and end at 848
     
 }
 @keyframes sass {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 85%;
+    }
+    
+}
+
+@keyframes tailwind {
     0%{
         width: 0%;
     }
@@ -189,8 +204,8 @@ header nav ul {
 :root{
     --text-color:#f5f5f5;
     --hover-color:#12f7ff;
-    --bg-color:#250821;
-    --secon-bg-color:#292e33;
+    --bg-color:#001325;
+    --secon-bg-color:#122436;
     --big-font:2.5rem;
     --normal-font:2rem;
     --sneon-box-shadow: 0 0 .5rem var(var(--hover-color));
@@ -236,6 +251,7 @@ header.sticky{
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 1px;
+    color: #fff !important;
 }
 span{
     color: var(--hover-color);
@@ -294,6 +310,19 @@ span{
 section{
     padding: 100px 10%;
 }
+
+/* .chat::before{
+    content: "\ed2d";
+    font-family: "boxicons";
+    position: absolute;
+    z-index: 1000;
+    right: -100px;
+    top: -80px;
+    color: #fff;
+    font-size: 300px;
+    -webkit-box-reflect: left;
+} */
+
 .home{
     min-height: 100vh;
     height: 100%;
@@ -302,6 +331,7 @@ section{
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     grid-gap: 4em;
+    /* background-image: url(); */
 }
 
 @media (max-width: 767px) {
@@ -374,6 +404,21 @@ section{
     font-size: 1rem;
 }
 
+.info-box h5.em::before{
+    content: "\eac1";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: top;
+}
+
+.info-box h5.pn::before{
+    content: "\ebb2";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: top;
+}
 .info-box span {
     font-size: 15px;
     color: #bdbdbd;
@@ -502,6 +547,7 @@ section{
     /* max-width: 350px; */
     height: auto;
     transition: .4s;
+    position: relative;
 }
 .img-box img:hover{
     filter: blur(10px);
@@ -516,6 +562,7 @@ section{
 
 .liquid-shaped:nth-child(2){
     filter: blur(10px);
+    mix-blend-mode: screen;
 }
 
 @media (max-width: 767px) {
@@ -685,6 +732,62 @@ section{
     padding: 0 10px;
 }
 
+.skill-left .skill-bar .info p.html:before{
+    content: "\e940";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.skill-left .skill-bar .info p.css:before{
+    content: "\e91e";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.skill-left .skill-bar .info p.js:before{
+    content: "\e946";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.skill-left .skill-bar .info p.sass:before{
+    content: "\e96c";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.skill-left .skill-bar .info p.tailwind:before{
+    content: "\e97a";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.skill-left .skill-bar .info p.ps:before{
+    content: "\ebb7";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.skill-left .skill-bar .info p.ai:before{
+    content: "\ee64";
+    font-family: 'Boxicons';
+    font-size: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
 .skill-left .skill-bar .bar{
     width: 100%;
     height: 10px;
@@ -713,8 +816,12 @@ section{
     animation: css 3s;
 }
 .skill-bar .bar .sass{
-    width: 80%;
+    width: 85%;
     animation: sass 3s;
+}
+.skill-bar .bar .tailwind{
+    width: 80%;
+    animation: tailwind 3s;
 }
 .skill-bar .bar .javascript{
     width: 70%;
@@ -864,7 +971,10 @@ section{
 
 .portfolio-gallery img{
     object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
+
 .port-box{
     position: relative;
     border-radius: 15px;
@@ -898,6 +1008,7 @@ section{
     opacity: .5s;
     height: 100%;
     transition: .5s;
+    object-fit: cover;
 }
 
 .port-content {
@@ -1369,6 +1480,17 @@ footer p{
 .scroll-top{
     opacity: 1;
     transform: translateY(-300px);
+    transition: 3s;
+}
+.scroll-left{
+    opacity: 1;
+    transform: translateX(-300px);
+    transition: 3s;
+}
+
+.scroll-right{
+    opacity: 1;
+    transform: translateX(300px);
     transition: 3s;
 }
 .show-items{
